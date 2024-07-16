@@ -31,6 +31,9 @@
 #include "main.h"
 #include "bitmap.h"
 
+const char *cTerm = "_rle";
+const char *dTerm = "_raw";
+
 void printUsage()
 {
     fprintf(stderr, "NAME\n");

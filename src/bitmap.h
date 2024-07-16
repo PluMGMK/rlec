@@ -8,8 +8,8 @@
 
 #include "common.h"
 
-const uint8_t lineFeed;
-const uint8_t imageEnd;
+extern const uint8_t lineFeed;
+extern const uint8_t imageEnd;
 
 typedef struct __attribute__((__packed__)) _bitmap
 {
