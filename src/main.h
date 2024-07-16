@@ -1,7 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-const char *cTerm = "_rle";
-const char *dTerm = "_raw";
+extern const char *cTerm;
+extern const char *dTerm;
 
 #endif /* MAIN_H */
