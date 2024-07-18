@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 TEST_SAMPLES_DIR="./samples"
 ORIGINAL_FILE="grey.bmp"
