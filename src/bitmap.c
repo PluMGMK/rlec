@@ -103,6 +103,13 @@ int RLECompression(FILE *ptrIn, FILE *ptrOut)
     }
     /* ------- */
 
+    /* Ensuring correct image size */
+    if (!image->imageSize)
+    {
+        image->imageSize = image->width * image->height * image->depth / 8;
+    }
+    /* ------- */
+
     printHeader(image);
 
     /* Skipping data from the beginning to the start offset */
