@@ -381,6 +381,28 @@ int RLEDecompression(FILE *ptrIn, FILE *ptrOut)
                 total++;
             }
         }
+	else if (couples[1] >= 3)
+        {
+            /* Absolute sequence */
+            lecture = fread(&data[total], 1, couples[1], ptrIn);
+            if (lecture != couples[1])
+            {
+                fprintf(stderr, "Error while reading input data\n");
+                ok = false;
+                goto cleaning;
+            }
+            total += lecture;
+            /* Ensure file pointer is word-aligned */
+            if (couples[1] & 1)
+            {
+                fseek(ptrIn, +1, SEEK_CUR);
+            }
+        }
+	else if (couples[1] == 1)
+        {
+            /* End of frame */
+            break;
+        }
     }
     /* ------- */
 
